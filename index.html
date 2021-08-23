@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Technical Documentation Page</title>
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>C# Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li>
+                <a class="nav-link" href="#What_Can_a_C#_Program_Do?">What Can a C# Program Do?</a>
+            </li>
+            <li><a class="nav-link" href="#Hello_world">Hello World</a></li>
+            <li><a class="nav-link" href="#Variables">Variables</a></li>
+            <li>
+                <a class="nav-link" href="#Declaring_variables">Declaring Variables</a>
+            </li>
+            <li><a class="nav-link" href="#Vector_3">Vector3</a></li>
+            <li><a class="nav-link" href="#Vector_2">Vector2</a></li>
+            <li><a class="nav-link" href="#Animation">Animation</a></li>
+            <li><a class="nav-link" href="#Canvas">Canvas</a></li>
+            <li><a class="nav-link" href="#Animator">Animator</a></li>
+            <li><a class="nav-link" href="#Loops">Loops</a></li>
+            <li><a class="nav-link" href="#String">String</a></li>
+            <li><a class="nav-link" href="#Wait_For_Seconds">WaitForSeconds</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    C# is a general-purpose, modern and object-oriented programming language pronounced as “C Sharp”. It
+                    was developed by Microsoft led by Anders Hejlsberg and his team within the .NET initiative and was
+                    approved by the European Computer Manufacturers Association (ECMA) and International Standards
+                    Organization (ISO). C# is among the languages for Common Language Infrastructure. C# is a lot
+                    similar to Java syntactically and is easy for users who have knowledge of C, C++ or Java.</p>
+
+                <p>
+                    Most C# operations involve manipulating numbers and text, but anything that the computer can
+                    physically do can be programmed in C#. Computers have no intelligence—they have to be told exactly
+                    what to do, and their actions are defined by the programming language you use. Once programmed, they
+                    can repeat the steps as many times as needed at high speed. Modern PCs are so fast they can count to
+                    a billion in seconds.</p>
+            </article>
+        </section>
+        <section class="main-section" id="What_Can_a_C#_Program_Do?">
+            <header>What Can a C# Program Do?</header>
+            <article>
+                <p>Typical programming tasks include putting data into a database or pulling it out, displaying
+                    high-speed graphics in a game or video, controlling electronic devices attached to the PC and
+                    playing music or sound effects. You can even use it to write software to generate music or help you
+                    compose.</p>
+
+                <p>Some developers believe that C# is too slow for games because it is interpreted rather than compiled.
+                    However the .NET Framework compiles the interpreted code the first time it runs.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Hello_World">
+            <header>Hello World</header>
+            <article>
+                To get started with writing C#, open your editor and write your
+                first "Hello world" C# code:
+                <code>
+                    Debug.Log("Hello World");
+                </code>
+
+                Hit the button CTRL+S or Command+S to save.
+            </article>
+        </section>
+        <section class="main-section" id="Variables">
+            <header>Variables</header>
+            <article>
+                <p>A variable is a name given to a storage area that is used to store values of various data types. Each
+                    variable in C# needs to have a specific type, which determines the size and layout of the variable's
+                    memory. For example, a variable can be of the type String, which means that it will be used to store
+                    a string value.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Declaring_Variables">
+            <header>Declaring Variables</header>
+            <article>
+                <p>For Example:</p>
+                <code>int myInt = 5;
+    
+    
+    void Start ()
+    {
+        myInt = MultiplyByTwo(myInt);
+        Debug.Log (myInt);
+    }
+    
+    
+    int MultiplyByTwo (int number)
+    {
+        int ret;
+        ret = number * 2;
+        return ret;
+    }
+      </code>
+            </article>
+        </section>
+        <section class="main-section" id="Vector3">
+            <header>Vector3</header>
+            <article>
+                <p>Representation of 3D vectors and points.</p>
+                <p>This structure is used throughout Unity to pass 3D positions and directions around. It also contains
+                    functions for doing common vector operations.</p>
+                <p>Besides the functions listed below, other classes can be used to manipulate vectors and points as
+                    well. For example the Quaternion and the Matrix4x4 classes are useful for rotating or transforming
+                    vectors and points.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Vector2">
+            <header>Vector2</header>
+            <article>
+                <p>Representation of 2D vectors and points.</p>
+                <p>This structure is used in some places to represent 2D positions and vectors (e.g. texture coordinates
+                    in a Mesh or texture offsets in Material). In the majority of other cases a Vector3 is used.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Animation">
+            <header>Animation</header>
+            <article>
+                <p>The animation component is used to play back animations.</p>
+                <p>You can assign animation clips to the animation component and control playback from your script. The
+                    animation system in Unity is weight-based and supports Animation Blending, Additive animations,
+                    Animation Mixing, Layers and full control over all aspects of playback.</p>
+                <p>AnimationState can be used to change the layer of an animation, modify playback speed, and for direct
+                    control over blending and mixing.</p>
+                <p>Also Animation supports enumerators. Looping through all AnimationStates is performed like this:</p>
+                <code>using UnityEngine;
+using System.Collections;
+
+public class ExampleClass : MonoBehaviour
+{
+    public Animation anim;
+
+    void Start()
+    {
+        anim = GetComponent<Animation>();
+        foreach (AnimationState state in anim)
+        {
+            state.speed = 0.5F;
+        }
+    }
+}
+        </code>
+            </article>
+        </section>
+        <section class="main-section" id="Canvas">
+            <header>Canvas</header>
+            <article>
+                <p>Element that can be used for screen rendering.</p>
+                <p>Elements on a canvas are rendered AFTER Scene rendering, either from an attached camera or using
+                    overlay mode.</p>
+                <code>
+public class ExampleClass
+{
+    void Start()
+    {
+        GameObject myGO;
+        GameObject myText;
+        Canvas myCanvas;
+        Text text;
+        RectTransform rectTransform;
+
+        // Canvas
+        myGO = new GameObject();
+        myGO.name = "TestCanvas";
+        myGO.AddComponentCanvas();
+
+        myCanvas = myGO.GetComponentCanvas();
+        myCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        myGO.AddComponentCanvasScaler();
+        myGO.AddComponentGraphicRaycaster();
+
+        // Text
+        myText = new GameObject();
+        myText.transform.parent = myGO.transform;
+        myText.name = "wibble";
+
+        text = myText.AddComponentText();
+        text.font = (Font)Resources.Load("MyFont");
+        text.text = "wobble";
+        text.fontSize = 100;
+
+        // Text position
+        rectTransform = text.GetComponentRectTransform();
+        rectTransform.localPosition = new Vector3(0, 0, 0);
+        rectTransform.sizeDelta = new Vector2(400, 200);
+    }
+}
+       </code>
+            </article>
+        </section>
+        <section class="main-section" id="Animator">
+            <header>Animator</header>
+            <article>
+                <p>Interface to control the Mecanim animation system.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Loops">
+            <header>Loops</header>
+            <article>
+                <p>Another important concept to create larger programs is loops. You'll use loops to repeat statements
+                    that you want executed more than once. Try this code in the interactive window:</p>
+                <code>public class ForLoop : MonoBehaviour
+{
+    int numEnemies = 3;
+    
+    
+    void Start ()
+    {
+        for(int i = 0; i  numEnemies; i++)
+        {
+            Debug.Log("Creating enemy number: " + i);
+        }
+    }
+}
+                                      </code>
+            </article>
+        </section>
+        <section class="main-section" id="String">
+            <header>String</header>
+            <article>
+                <p>Represents text as a series of Unicode characters.</p>
+                <p>Unity uses the .Net System.String class for strings. See the Microsoft MSDN documentation for Strings
+                    for more details.</p>
+                <p><strong>Note:</strong> In c# string is an alias for System.String. This means that you can use either
+                    string or String in your code (if you have added using System to the top of your script.)
+                    <strong>Note:</strong> In Javascript strings are represented using String which you should use in
+                    your Unity script code. Here are some basic uses of the String class.
+                </p>
+                <code>public class ExampleClass : MonoBehaviour
+{
+    void Start()
+    {
+        // prints hello
+        string s = "hello";
+        Debug.Log(s);
+
+
+        // prints hello world
+        s = string.Format("{0} {1}", s, "world");
+        Debug.Log(s);
+
+        // prints helloworld
+        s = string.Concat("hello", "world");
+        Debug.Log(s);
+
+        // prints HELLOWORLD
+        s = s.ToUpper();
+        Debug.Log(s);
+
+        // prints helloworld
+        s = s.ToLower();
+        Debug.Log(s);
+
+        // prints 'e'
+        Debug.Log(s[1]);
+
+        // prints 42
+        int i = 42;
+        s = i.ToString();
+        Debug.Log(s);
+
+        // prints -43
+        s = "-43";
+        i = int.Parse(s);
+        Debug.Log(i);
+
+        // prints 3.141593 (an approximation)
+        float f = 3.14159265359F;
+        s = f.ToString();
+        Debug.Log(s);
+
+        // prints -7.141593 (an approximation)
+        s = "-7.14159265358979";
+        f = float.Parse(s);
+        Debug.Log(f);
+    }
+}
+      </code>
+            </article>
+        </section>
+        <section class="main-section" id="Wait_For_Seconds">
+            <header>WaitForSeconds</header>
+            <article>
+                <p>Suspends the coroutine execution for the given amount of seconds using scaled time.</p>
+                <p>The actual time suspended is equal to the given time multiplied by Time.timeScale. See
+                    WaitForSecondsRealtime if you wish to wait using unscaled time. WaitForSeconds can only be used with
+                    a yield statement in coroutines.</p>
+                <p>There are some factors which can mean the actual amount of time waited does not precisely match the
+                    amount of time specified:
+                    1. Start waiting at the end of the current frame. If you start WaitForSeconds with duration 't' in a
+                    long frame (for example, one which has a long operation which blocks the main thread such as some
+                    synchronous loading), the coroutine will return 't' seconds after the end of the frame, not 't'
+                    seconds after it was called.
+                    2. Allow the coroutine to resume on the first frame after 't' seconds has passed, not exactly after
+                    't' seconds has passed.</p>
+                <code>public class WaitForSecondsExample : MonoBehaviour
+{
+    void Start()
+    {
+        StartCoroutine(Example());
+    }
+
+    IEnumerator Example()
+    {
+        print(Time.time);
+        yield return new WaitForSeconds(5);
+        print(Time.time);
+    }
+}
+      </code>
+            </article>
+        </section>
+        <section class="main-section" id="Reference">
+            <header>Reference</header>
+            <article>
+                <ul>
+                    <li>
+                        All the documentation in this page is taken from
+                        <a href="https://docs.unity3d.com/ScriptReference/index.html" target="_blank">Scripting API</a>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
+
+</html>
